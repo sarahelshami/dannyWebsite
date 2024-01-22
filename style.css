@@ -5,6 +5,7 @@ html {
 
 body {
     margin: 0;
+    max-width: 1500px;
 }
 
 body > *:not(nav){
@@ -22,17 +23,23 @@ h2 {
     font-size: 1.5rem;
     padding-top: 20px;
 }
+
 nav {
 background-color:black;
 width: 100%;
 height: 70px;
 line-height: 70px;
 position: fixed;
-top: 0;
 display: flex;
-justify-content: space-between;
+top: 0;
 }
 
+#navContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+}
 #leftNav {
     flex-basis: 80%;
     display: flex;
@@ -129,50 +136,62 @@ footer {
     padding-top: 20px;
 }
 
-.lineImg {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.lineImg img{
-    display: block;
-    max-width: 100%;
-    height: 600px;
-}
-
-.imgInlineRight{
-    padding-left: 15%;
-    width: 40%;
-}
-
-.textAndImg {
+.twoImagesContainer {
     display: flex;
-    flex-direction: row;
+    gap: 50px;
+}
+
+.leftImage, .rightImage {
+    display: flex;
+    flex-direction: column;
+}
+
+.leftImage img, .rightImage img {
     width: 100%;
+    height: auto;
 }
 
-.paragraphFlex {
-    display: inline-block;
-    width: 60%;
+#companyTruck {
+    flex: 0.80838;
 }
 
-.textAndImg figure {
-    display: block;
+#firstText {
+    flex: 0.3196689;
+}
+
+#everlast {
+    flex: 0.808846;
+}
+
+#thirdText {
+    flex: 0.352169;
+} 
+
+#imgPart {
+    display: flex;
+    flex-direction: column;
     width: 40%;
-    padding-left: 15%;
+    float: right;
+    margin-left: 40px;
 }
 
-.textAndImg img {
-    height: 600px;
+#imgPart img {
+    max-height: 500px;
+    object-fit: contain;
+
 }
 
-.colleagueName {
-margin-bottom: 0;
-}
+ #colleagueExperiences h3 {
+    margin-bottom: 0;
+ }
 
-.colleagueExp {
-margin-top: 0;
+ #colleagueExperiences p:not(#colleagueIntro){
+    margin-top: 0;
+ } 
+
+.youtubeVideo {
+    aspect-ratio: 16 / 9;
+    width: 100%;
 }
 
 #song {
@@ -197,17 +216,6 @@ display: flex;
 overflow: scroll;
 }
 
-@media (max-width: 270px) {
-   /* #textLink {
-       display: none;
-    }
-    #imageLink {
-        display:flex;
-        height: 100%;
-        object-fit: contain;
-    } */
-
-}
 @media (max-width: 360px) {
     #logo {
          width: 100%;   
@@ -215,11 +223,6 @@ overflow: scroll;
     }
 
 @media (max-width: 480px) {
-
-   /* #logo {
-        width: 100%;   
-    } */
-    
     #textLink {
         display: none;
     }
@@ -236,4 +239,29 @@ overflow: scroll;
    #aboutNav:hover {
     font-size: 1rem;
    }
+
+   .textAndImgContainer {
+    display: flex;
+    flex-direction: column;
+   }
+   #textPart {
+    order: 0;
+   }
+   #imgPart {
+    float: none;
+    margin: 0;
+    width: 100%;
+    order: 1;
+   }
+
+   #imgPart img {
+    height: auto;
+   }
+}
+
+@media (max-width: 768px) {
+    .twoImagesContainer {
+        flex-direction: column;
+    }
+
 }
